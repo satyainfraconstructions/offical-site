@@ -70,7 +70,7 @@ export default function Contact() {
     const fetchContact = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`${API_BASE}/api/contact`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -182,7 +182,7 @@ export default function Contact() {
     setErrors((prev) => ({ ...prev, form: undefined })); // clear any previous server error
 
     try {
-      const response = await fetch(`${API_BASE}/api/contact/send-email`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

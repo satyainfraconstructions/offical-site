@@ -32,7 +32,7 @@ interface AboutData {
   companyStats: CompanyStats[];
 }
 
-const API_BASE = "http://localhost:5000"; // Adjust for your backend URL
+const VITE_API_URL = "http://localhost:5000"; // Adjust for your backend URL
 
 export default function AboutAdmin() {
   const { toast } = useToast();
@@ -72,7 +72,7 @@ export default function AboutAdmin() {
   const fetchAboutData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:5000/api/admin`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -101,7 +101,7 @@ export default function AboutAdmin() {
   const handleSaveAboutContent = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/admin/content`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/content`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ export default function AboutAdmin() {
 
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/admin/team`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/team`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -174,7 +174,7 @@ export default function AboutAdmin() {
   const handleEditTeamMember = async (id: number, updatedMember: Partial<TeamMember>) => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/admin/team/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/team/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -207,7 +207,7 @@ export default function AboutAdmin() {
   const handleDeleteTeamMember = async (id: number) => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/admin/team/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/team/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -244,7 +244,7 @@ export default function AboutAdmin() {
 
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/admin/stats`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/stats`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -291,7 +291,7 @@ export default function AboutAdmin() {
   try {
     setIsLoading(true);
 
-    const response = await fetch(`${API_BASE}/api/admin/stats/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/stats/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -327,7 +327,7 @@ export default function AboutAdmin() {
   const handleDeleteStats = async (id: number) => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/admin/stats/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin/stats/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

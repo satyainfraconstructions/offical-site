@@ -48,7 +48,7 @@ export default function About() {
     const fetchAboutData = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`${API_BASE}/api/admin`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/admin`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

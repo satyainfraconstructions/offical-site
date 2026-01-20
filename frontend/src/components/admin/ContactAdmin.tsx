@@ -47,7 +47,7 @@ export default function ContactAdmin() {
     const fetchContact = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`${API_BASE}/api/contact`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`);
         if (!response.ok) {
           if (response.status === 404) {
             // Set default values if no contact document exists
@@ -98,7 +98,7 @@ export default function ContactAdmin() {
 
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/contact`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(contactInfo),

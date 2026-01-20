@@ -37,7 +37,7 @@ export default function GalleryAdmin() {
   const [editItem, setEditItem] = useState<Partial<GalleryItem>>({});
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/gallery`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/gallery`)
       .then(res => res.json())
       .then(data => {
         const mappedData = data.map((item: any) => ({

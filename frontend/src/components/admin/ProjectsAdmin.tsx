@@ -88,7 +88,7 @@ export default function ProjectsAdmin() {
   const fetchProjects = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/projects`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -129,7 +129,7 @@ export default function ProjectsAdmin() {
 
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/projects/ongoing`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/ongoing`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOngoingProject),
@@ -174,7 +174,7 @@ export default function ProjectsAdmin() {
     console.log("Editing project with _id:", _id, "Data:", updatedProject);
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/projects/ongoing/${_id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/ongoing/${_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedProject),
@@ -208,7 +208,7 @@ export default function ProjectsAdmin() {
   const handleDeleteOngoingProject = async (_id: string) => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/projects/ongoing/${_id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/ongoing/${_id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -249,7 +249,7 @@ export default function ProjectsAdmin() {
 
     try {
       setIsLoading(true);
-      const response = await fetch(`${API_BASE}/api/projects/completed`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects/completed`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newCompletedProject),
@@ -298,7 +298,7 @@ export default function ProjectsAdmin() {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `${API_BASE}/api/projects/completed/${_id}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/completed/${_id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -335,7 +335,7 @@ export default function ProjectsAdmin() {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `${API_BASE}/api/projects/completed/${_id}`,
+        `${import.meta.env.VITE_API_URL}/api/projects/completed/${_id}`,
         {
           method: "DELETE",
         }

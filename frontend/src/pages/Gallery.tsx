@@ -32,7 +32,7 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/gallery`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/gallery`)
       .then((res) => res.json())
       .then((data) => {
         const mappedData = data.map((item: any) => ({
