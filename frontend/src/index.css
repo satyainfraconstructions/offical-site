@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Construction Company Design System - Golden Yellow & Navy Blue Palette */
+
+@layer base {
+  :root {
+    /* Core Colors - Navy Blue Base */
+    --background: 0 0% 98%;
+    --foreground: 220 70% 15%;
+
+    /* Cards and Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 220 70% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 70% 15%;
+
+    /* Golden Yellow Primary */
+    --primary: 48 96% 58%;
+    --primary-foreground: 220 70% 15%;
+    --primary-glow: 48 96% 68%;
+
+    /* Navy Blue Secondary */
+    --secondary: 220 70% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Navy Tones */
+    --muted: 220 30% 92%;
+    --muted-foreground: 220 50% 45%;
+
+    /* Accent - Bright Yellow */
+    --accent: 48 96% 58%;
+    --accent-foreground: 220 70% 15%;
+
+    /* Construction Golden for CTAs */
+    --construction: 48 96% 58%;
+    --construction-foreground: 220 70% 15%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Borders and Inputs */
+    --border: 220 40% 85%;
+    --input: 220 30% 90%;
+    --ring: 48 96% 58%;
+
+    /* Construction Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-ash: linear-gradient(180deg, hsl(220 70% 95%), hsl(220 50% 85%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 15% / 0.9), hsl(48 96% 58% / 0.1));
+
+    /* Shadows */
+    --shadow-construction: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-ash: 0 4px 20px -4px hsl(220 70% 15% / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Navy Blue dominant with golden yellow accents */
+    --background: 220 70% 8%;
+    --foreground: 0 0% 92%;
+
+    --card: 220 70% 12%;
+    --card-foreground: 0 0% 92%;
+
+    --popover: 220 70% 12%;
+    --popover-foreground: 0 0% 92%;
+
+    --primary: 48 96% 60%;
+    --primary-foreground: 220 70% 8%;
+    --primary-glow: 48 96% 70%;
+
+    --secondary: 220 70% 20%;
+    --secondary-foreground: 0 0% 85%;
+
+    --muted: 220 50% 16%;
+    --muted-foreground: 220 30% 60%;
+
+    --accent: 48 96% 60%;
+    --accent-foreground: 220 70% 8%;
+
+    --construction: 48 96% 60%;
+    --construction-foreground: 220 70% 8%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 220 70% 8%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 220 70% 8%;
+
+    --border: 220 50% 25%;
+    --input: 220 50% 20%;
+    --ring: 48 96% 60%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-ash: linear-gradient(180deg, hsl(220 70% 15%), hsl(220 70% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 8% / 0.95), hsl(48 96% 60% / 0.1));
+
+    --shadow-construction: 0 10px 30px -10px hsl(var(--primary) / 0.4);
+    --shadow-ash: 0 4px 20px -4px hsl(220 70% 5% / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+
+    --sidebar-background: 220 70% 10%;
+    --sidebar-foreground: 0 0% 85%;
+    --sidebar-primary: 48 96% 60%;
+    --sidebar-primary-foreground: 220 70% 8%;
+    --sidebar-accent: 220 70% 18%;
+    --sidebar-accent-foreground: 0 0% 85%;
+    --sidebar-border: 220 50% 25%;
+    --sidebar-ring: 48 96% 60%;
+  }
+}
+
+/* Construction Utility Classes */
+@layer components {
+  .construction-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .ash-gradient {
+    background: var(--gradient-ash);
+  }
+  
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-construction {
+    box-shadow: var(--shadow-construction);
+  }
+  
+  .shadow-ash {
+    box-shadow: var(--shadow-ash);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .hero-text {
+    text-shadow: 0 2px 10px hsl(220 15% 15% / 0.8);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
