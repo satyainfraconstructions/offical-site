@@ -6,7 +6,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";   // User layout with navbar
-import AdminLayout from "./components/AdminLayout"; // ✅ Create separate admin layout
 
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
