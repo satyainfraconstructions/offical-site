@@ -24,7 +24,7 @@ interface GalleryItem {
   imageUrl?: string;
 }
 
-const BASE_URL = "http://localhost:5000"; // Backend base URL
+const API_BASE = "http://localhost:5000"; // Backend base URL
 
 export default function Gallery() {
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
@@ -32,7 +32,7 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/gallery")
+    fetch(`${API_BASE}/api/gallery`)
       .then((res) => res.json())
       .then((data) => {
         const mappedData = data.map((item: any) => ({

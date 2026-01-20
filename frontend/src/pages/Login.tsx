@@ -11,6 +11,9 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Lock, Mail } from "lucide-react";
 
+const API_BASE = "https://offical-site-1.onrender.com";
+
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,9 +25,7 @@ const Login = () => {
 
     try {
       const res = await fetch(
-        `${
-          import.meta.env.VITE_API_URL || "http://localhost:5000"
-        }/api/auth/login`,
+        `${API_BASE}/api/auth/login`,
         {
           method: "POST",
           headers: {

@@ -17,6 +17,8 @@ interface GalleryItem {
   imageUrl?: string;
 }
 
+const API_BASE = "http://localhost:5000";
+
 const categories = ["Commercial", "Residential", "Industrial", "Healthcare", "Education", "Retail", "Infrastructure", "Recreation"];
 
 export default function GalleryAdmin() {
@@ -35,7 +37,7 @@ export default function GalleryAdmin() {
   const [editItem, setEditItem] = useState<Partial<GalleryItem>>({});
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/gallery")
+    fetch(`${API_BASE}/api/gallery`)
       .then(res => res.json())
       .then(data => {
         const mappedData = data.map((item: any) => ({
